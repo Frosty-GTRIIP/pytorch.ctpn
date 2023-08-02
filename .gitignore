@@ -1,0 +1,6 @@
+*.pyc
+*.egg-info
+*.so
+*.egg
+ctpn/utils/bbox/bbox.c
+ctpn/utils/bbox/make.sh

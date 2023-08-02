@@ -42,7 +42,7 @@ def rotate(img, angle):
     return img_rotation
 
 
-def resize_image(img, max_size=1200, color=(0, 0, 0)):
+def resize_image(img, max_size=1000, color=(0, 0, 0)):
 
     img_size = img.shape
     im_size_max = np.max(img_size[0:2])
@@ -77,9 +77,7 @@ class DetectImg():
         self.detect_type = detect_type
         self.model.eval()
 
-    def detect(self, img_file):
-        img = Image.open(img_file).convert('RGB')
-        img = np.array(img)
+    def detect(self, img):
         img_ori, (rh, rw) = resize_image(img)
         h, w, c = img_ori.shape
         im_info = np.array([h, w, c]).reshape([1, 3])
